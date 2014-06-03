@@ -5,13 +5,17 @@ This is planned to be a library to wrap the functionality on morris.js for asp.n
 Use in Controller
 ==
 ```
-LineGraphDTO model = new LineGraphDTO() {
-    data = foo.Select(a => new { value = a.Value, date = a.bar.ToString("yyyy-MM-dd") }).ToList<object>(),
-    element = "chart",
-    labels = new List<string> { "Value" },
-    xkey = "date",
-    ykeys = new List<string> {"value"},
-};
+public ActionResult AssessmentOverTime(List<Foo> foos)
+{
+  LineGraphDTO model = new LineGraphDTO() {
+      data = foos.Select(foo => new { value = foo.Value, date = foo.date.ToString("yyyy-MM-dd") }).ToList<object>(),
+      element = "chart",
+      labels = new List<string> { "Value" },
+      xkey = "date",
+      ykeys = new List<string> {"value"},
+  };
+  return View(model);
+}
 ```
 
 Use in View
