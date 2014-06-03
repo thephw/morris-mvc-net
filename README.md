@@ -25,3 +25,7 @@ Use in View
   new Morris.Line(@Html.Raw(Model.ToJSON()));
 </script>
 ```
+
+Dependencies
+===
+Currently dependent on http://james.newtonking.com/json
